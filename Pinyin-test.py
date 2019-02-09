@@ -46,25 +46,32 @@ def find_vowel(letter_list, tonal_pinyin):
             vowels.append(char)
     print("Found vowels", vowels)
     
+    print("Checking for multiple vowels")
     if counter > 1:
-        print(vowels)
-
-
+        if vowels == ['i', 'a']:
+            tone_vowel = 'a'
+            print("Found multiple vowels", vowels, "Selected", tone_vowel)
+    else:
+        tone_vowel = ''.join(vowels)
+        print("Only one vowel found", tone_vowel)
 
     #Replace vowel with tonal_pinyin vowel
-    letter_list = [w.replace(char, tonal_pinyin) for w in letter_list]
+    letter_list = [w.replace(tone_vowel, tonal_pinyin) for w in letter_list]
+    print("Replaced original tone vowel with tonal vowel, new word:", letter_list)
 
     #Remove extraneous tone number
     tone_number_removed = letter_list[:-1]
+    print("Removed now unnecessary tone number:", tone_number_removed)
 
     #Reform string
     finished_char = "".join(tone_number_removed)
     return finished_char
-    #print(finished_char)
+    print("Made the list of letters back into a string:", finished_char)
 
 def find_tone(word_list):
     for word in word_list:
         
+        finished_word = []
         # Split into individual character pinyin
         split_word = word.split(' ')
         for indiv_character in split_word:
@@ -81,7 +88,8 @@ def find_tone(word_list):
             #print(tonal_pinyin)
 
             finished_char = find_vowel(letter_list, tonal_pinyin)
-
+        finished_word.append(finished_char)
+        print(finished_word)
 
 find_tone(test_word_list)
 
