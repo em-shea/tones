@@ -109,6 +109,3 @@ def replace_tone_vowel(letter_list, tone_vowel, tonal_pinyin):
     finished_char = "".join(tone_number_removed)
     debug("Made the letters list into a string:", finished_char)
     return finished_char
-
-#converted_word = convert_from_numerical_pinyin(test_word)
-#print(converted_word)
