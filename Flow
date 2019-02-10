@@ -1,34 +1,28 @@
 SPLIT INTO LETTERS
-//1. Take list of Chinese words with tone numbers
-//2. Loop over each two+ character word
-3. Split the word into each individual character
-4. Loop over each individual character
-5. Split each character into a list of letters
+- Split the word into each individual character
+- Loop over each individual character
+- Split each character into a list of letters
 
 GET VOWEL
-6. Identify each vowel
-7. If a character has multiple vowels, send to tone placement logic
-    7.1. Match vowel combination (iang) to correct vowel (a)
-    7.2. Set vowel to correct vowel
+- Identify each vowel
+- If a character has multiple vowels, send to tone placement logic
+    - Match vowel combination (iang) to correct vowel (a)
+    - Set vowel to correct vowel
 
 FIND AND REPLACE TONE
-8. Get tone number from end of list
-9. Use tone number and vowel to look up correct tonal vowel
-10. Replace vowel with tonal vowel
-11. Drop the tone number
+- Get tone number from end of list
+- Use tone number and vowel to look up correct tonal vowel
+- Replace vowel with tonal vowel
+- Drop the tone number
 
 PUT BACK TOGETHER
-12. Reform indiv. character string from list of letters
-13. Reform multi character word string from indiv. character strings
-//14. Replace original word in list with new word including tonal vowel
+- Reform indiv. character string from list of letters
+- Reform multi character word string from indiv. character strings
 
 
-word_list = ["piao3 liang2", ""...]
-for row in word_list
-    new_word = numeric_pinyin_conversion(word)
-    print new_word
 
-with open('file.csv') as fh:
-  for row in fh:
-    new_word = numeric_pinyin_conversion(row)
-    print new_word
+CSV WRAPPER
+Take list of Chinese words with tone numbers
+Loop over each two+ character word
+...
+Replace original word in list with new word including tonal vowel
