@@ -1,6 +1,6 @@
 SPLIT INTO LETTERS
-1. Take list of Chinese words with tone numbers
-2. Loop over each two+ character word
+//1. Take list of Chinese words with tone numbers
+//2. Loop over each two+ character word
 3. Split the word into each individual character
 4. Loop over each individual character
 5. Split each character into a list of letters
@@ -20,4 +20,15 @@ FIND AND REPLACE TONE
 PUT BACK TOGETHER
 12. Reform indiv. character string from list of letters
 13. Reform multi character word string from indiv. character strings
-14. Replace original word in list with new word including tonal vowel
+//14. Replace original word in list with new word including tonal vowel
+
+
+word_list = ["piao3 liang2", ""...]
+for row in word_list
+    new_word = numeric_pinyin_conversion(word)
+    print new_word
+
+with open('file.csv') as fh:
+  for row in fh:
+    new_word = numeric_pinyin_conversion(row)
+    print new_word

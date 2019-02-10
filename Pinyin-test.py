@@ -3,7 +3,8 @@ test_word_list = [
     #'ban4 yan3', 
     #'bang1 mang2',
     #'bang1 zhu4',
-    'bang3 jia4',
+    #'bang3 jia4',
+    'nv3 er2',
     #'bang3 yang4'
     ]
 
@@ -41,7 +42,11 @@ def find_vowel(letter_list, tonal_pinyin):
     print("Starting loop for word", letter_list)
 
     for index, char in enumerate(letter_list):
-        if char in 'aeiou':
+        if char in 'v':
+            char = 'ü'
+
+    for index, char in enumerate(letter_list):
+        if char in 'aeiouü':
             counter = counter + 1
             vowels.append(char)
     print("Found vowels", vowels)
@@ -51,6 +56,7 @@ def find_vowel(letter_list, tonal_pinyin):
         if vowels == ['i', 'a']:
             tone_vowel = 'a'
             print("Found multiple vowels", vowels, "Selected", tone_vowel)
+        #if vowels == []
     else:
         tone_vowel = ''.join(vowels)
         print("Only one vowel found", tone_vowel)
@@ -69,6 +75,7 @@ def find_vowel(letter_list, tonal_pinyin):
     return finished_char
 
 def find_tone(word_list):
+    
     for word in word_list:
         
         finished_word = []
@@ -88,7 +95,7 @@ def find_tone(word_list):
             #print(tonal_pinyin)
 
             finished_char = find_vowel(letter_list, tonal_pinyin)
-        finished_word.append(finished_char)
+            finished_word.append(finished_char)
         print(finished_word)
 
 find_tone(test_word_list)
