@@ -1,7 +1,7 @@
 # Enables print statements explaining the process
 DEBUG_ENABLED = False
 
-test_word = 'lve4 duo2' #'hu2 shuo1' # 'hao4 fei4' #'bang3 jia4' #'nv3 er2' #jin3 kuai4 jian3 shao3 huang1 miu4 
+#test_word = 'lve4 duo2' #'hu2 shuo1' # 'hao4 fei4' #'bang3 jia4' #'nv3 er2' #jin3 kuai4 jian3 shao3 huang1 miu4 
 
 # Dictionary with lists of tonal pinyin for each vowel
 pinyin = {
@@ -44,13 +44,6 @@ def convert_indiv_character(indiv_character):
     # Convert indiv char string into list of letters
     letter_list = list(indiv_character)
 
-    # Select tone number, which is last item in letter_list
-    # Set integer to use as pinyin dict/list index  
-    tone = letter_list[-1]
-    tone_int = int(tone)-1
-
-    debug("Found tone:", tone)
-
     # Identify v letters, convert to ü
     for index, letter in enumerate(letter_list):
         if letter == 'v':
@@ -83,11 +76,20 @@ def convert_indiv_character(indiv_character):
         else: 
             tone_vowel = vowels[1]
 
-        debug("Selected vowel:", tone_vowel)    
+        debug("Selected vowel:", tone_vowel)
+    elif counter == 0:
+        return  indiv_character   
     else:
         tone_vowel = vowels[0]
         debug("Only one vowel found:", tone_vowel)
 
+    # Select tone number, which is last item in letter_list
+    # Set integer to use as pinyin dict/list index  
+    tone = letter_list[-1]
+    tone_int = int(tone)-1
+
+    debug("Found tone:", tone)
+    
     # Select tonal vowel from pinyin dict/list using tone_vowel and tone index
     tonal_pinyin = pinyin[tone_vowel][tone_int]
     debug("Tone vowel converted:", tonal_pinyin)
@@ -110,5 +112,5 @@ def replace_tone_vowel(letter_list, tone_vowel, tonal_pinyin):
     debug("Made the letters list into a string:", finished_char)
     return finished_char
 
-converted_word = convert_from_numerical_pinyin(test_word)
-print(converted_word)
+#converted_word = convert_from_numerical_pinyin(test_word)
+#print(converted_word)
