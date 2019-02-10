@@ -1,8 +1,6 @@
 # Enables print statements explaining the process
 DEBUG_ENABLED = False
 
-#test_word = 'lve4 duo2' #'hu2 shuo1' # 'hao4 fei4' #'bang3 jia4' #'nv3 er2' #jin3 kuai4 jian3 shao3 huang1 miu4 
-
 # Dictionary with lists of tonal pinyin for each vowel
 pinyin = {
     'a': ['ā', 'á', 'ǎ', 'à', 'a'], 
