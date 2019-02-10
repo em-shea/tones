@@ -65,8 +65,8 @@ def find_vowel(letter_list, tonal_pinyin):
 
     #Reform string
     finished_char = "".join(tone_number_removed)
-    return finished_char
     print("Made the list of letters back into a string:", finished_char)
+    return finished_char
 
 def find_tone(word_list):
     for word in word_list:
