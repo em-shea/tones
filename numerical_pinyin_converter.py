@@ -1,5 +1,5 @@
 # Enables print statements explaining the process
-DEBUG_ENABLED = True
+DEBUG_ENABLED = False
 
 # Dictionary with lists of tonal pinyin for each vowel
 pinyin = {
