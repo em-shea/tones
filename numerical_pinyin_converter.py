@@ -1,5 +1,5 @@
 # Enables print statements explaining the process
-DEBUG_ENABLED = False
+DEBUG_ENABLED = True
 
 # Dictionary with lists of tonal pinyin for each vowel
 pinyin = {
@@ -76,7 +76,10 @@ def convert_indiv_character(indiv_character):
 
         debug("Selected vowel:", tone_vowel)
     elif counter == 0:
-        return  indiv_character   
+        if letter_list == ["r", "5"]:
+            return "".join(letter_list[:-1])
+        else:
+            return  indiv_character   
     else:
         tone_vowel = vowels[0]
         debug("Only one vowel found:", tone_vowel)
