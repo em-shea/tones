@@ -1,4 +1,4 @@
-# tones
+# pinyin tone converter
 Converts Mandarin pinyin with tone numbers to pinyin with tone marks.
 
 Example:
