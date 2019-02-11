@@ -3,7 +3,8 @@ Converts Mandarin pinyin with tone numbers to pinyin with tone marks.
 
 Example:
 > numerical:  
-> bao1 guo3  
+> bao1 guo3
+>
 > tone marks:  
 > bāo guǒ
 
