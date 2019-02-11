@@ -1,5 +1,4 @@
 from numerical_pinyin_converter import convert_from_numerical_pinyin
-import time
 
 print("Welcome to the numerical pinyin converter.")
 
