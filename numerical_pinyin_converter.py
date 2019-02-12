@@ -1,4 +1,4 @@
-# Enables print statements explaining the process
+# Enables print statements useful for debugging
 DEBUG_ENABLED = False
 
 # Dictionary with lists of tonal pinyin for each vowel
