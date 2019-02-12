@@ -76,23 +76,31 @@ def convert_indiv_character(indiv_character):
 
         debug("Selected vowel:", tone_vowel)
     elif counter == 0:
+        # try:    
+        
+        # If the character is r5 (儿), remove tone number and return
         if letter_list == ["r", "5"]:
             return "".join(letter_list[:-1])
         else:
-            return  indiv_character   
+            raise ValueError("Invalid numerical pinyin. Input does not contain a vowel.")
+
     else:
         tone_vowel = vowels[0]
         debug("Only one vowel found:", tone_vowel)
 
-    # Select tone number, which is last item in letter_list
-    # Set integer to use as pinyin dict/list index  
+    # Select tone number, which is last item in letter_list  
     tone = letter_list[-1]
-    tone_int = int(tone)-1
+    
+    # Set integer to use as pinyin dict/list index
+    # Select tonal vowel from pinyin dict/list using tone_vowel and tone index
+    try: 
+        tone_int = int(tone)-1
+        tonal_pinyin = pinyin[tone_vowel][tone_int]
+        
+    except Exception as e:
+        raise ValueError("Invalid numerical pinyin. The last letter must be an integer between 1-5.")
 
     debug("Found tone:", tone)
-    
-    # Select tonal vowel from pinyin dict/list using tone_vowel and tone index
-    tonal_pinyin = pinyin[tone_vowel][tone_int]
     debug("Tone vowel converted:", tonal_pinyin)
 
     # Cal replace_tone_vowel to replace and reformat the string
